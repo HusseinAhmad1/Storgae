@@ -6,6 +6,16 @@
  - Inlämning sker genom länk till git repository (Codeberg eller Github)
  - En bonusuppgift (en extra poäng till tentan).
 
+### Inlämning Bonusuppgift 
+
+mylist: 1->2->3->4->5->6
+
+mylist.swap(1,3);
+
+Efter:
+mylist: 1->4->3->2->5->6
+
+
 ## C++ Skapa objekt på stacken vs med new (på heap) 
 
 ```

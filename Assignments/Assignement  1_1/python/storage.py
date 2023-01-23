@@ -22,3 +22,6 @@ class Storage:
 
     def isempty(self):
         """ Return True if the list is empty, otherwise False """
+
+    # def swap(self, i, j):
+        """ Swaps the nodes at position i and j. Returns True if successful, otherwise False (e.g. outside range)"""
