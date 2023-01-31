@@ -12,11 +12,17 @@ public:
     // Default constructor
     Node()
     {
+        data = 0;
+        Node *next;
+
     }
 
     // Constructor with data
     Node(int data)
     {
+        this ->data = data;
+        this ->next = NULL;
+
     }
 
 };
@@ -31,19 +37,44 @@ public:
     */
     Storage()
     {
+        head = NULL;
     }
 
     /** Create a Node to hold the data, then put it at the head of the list.
      * @param text The data for the new node
     */
-    void push(int data);
+    void push(int data){
+        Node *NewNode = new Node(data);
+    if (this ->head == NULL)
+    {
+        this ->head = NewNode;
+    }
+    else   
+    {
+        NewNode ->next = this ->head;
+        this ->head = NewNode;
+    }
+    }
 
     /** Remove the head Node and return its data.
      * 
      * @param [out] The data (only valid if return true)
      * @return True if there is a node to return
     */
-    bool pop(int &data);
+      bool pop(int &data)
+    {
+    if (this ->head == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        data = this->head ->data ;
+        this ->head = this ->head->next ;
+        return true ;
+    }
+    }
+
 
     /**
      * Return the data from the head Node, without removing it.
@@ -51,7 +82,18 @@ public:
      * @param [out] The data (only valid if return true)
      * @return True if text has been returned successfully (there is a node)
     */    
-    bool peek(int &data);
+      bool peek(int &data)
+    {
+    if (this ->head == NULL)
+    {
+        return false ;
+    }
+    else
+    {
+        data = this ->head ->data ;
+        return true;
+    }
+    }
 
     /**
      * Return the data from the head Node, without removing it.
@@ -59,7 +101,18 @@ public:
      * @param [out] The data (only valid if return true)
      * @return True if text has been returned successfully (there is a node)
     */
-    bool isEmpty();
+    
+    bool isEmpty()
+    {
+    if (this ->head == NULL)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    }
 
     /**
      * Swaps the nodes at position i and j.
@@ -72,7 +125,7 @@ public:
 };
 
 
-/*
+
 main() {
     Storage *s = new Storage();
     s->push(1);
@@ -80,4 +133,4 @@ main() {
     s->pop(pop);
     cout << pop << endl;
 }
-*/
+
